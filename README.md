@@ -19,3 +19,7 @@
 1 Install library: yarn/npm install
 2 Start Cmd: yarn/npm build
 3 Copy all file on dist/ folder to remote
+
+# Run Test
+1 Install library: yarn/npm install
+2 Start Cmd: yarn/npm test

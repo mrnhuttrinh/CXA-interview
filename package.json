@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "build": "webpack --mode production",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "jest"
   },
   "keywords": [],
   "author": "mrnhuttrinh",
@@ -28,18 +28,38 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "babel-jest": "^24.9.0",
     "bem-cn": "^3.0.1",
     "css-loader": "^1.0.0",
     "decko": "^1.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "ignore-styles": "^5.0.1",
     "isomorphic-fetch": "^2.2.1",
+    "jest": "^24.9.0",
     "lodash": "^4.17.11",
     "react": "^16.9.0",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-test-renderer": "^16.9.0",
     "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
     "redux-saga": "^0.16.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uuid": "^3.3.3"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
   }
 }
