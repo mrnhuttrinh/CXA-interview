@@ -1,0 +1,145 @@
+.todo-list {
+  $r: &;
+
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  overflow: hidden;
+  width: 500px;
+  min-height: 100px;
+  background:rgba($color: #000000, $alpha: 0.085);
+
+  #{$r}__heading {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  #{$r}__input {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  #{$r}__searching {
+    border-radius: 6px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.3);
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    height: 40px;
+
+    &.is-search {
+      background-color: grey;
+      box-shadow: 0 0 2px 0 inset grey;
+    }
+  }
+
+  #{$r}__items {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  #{$r}__no-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    color: orangered;
+    opacity: 0.9;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #{$r}__item {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 50px;
+    color: green;
+    opacity: 0.9;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.4);
+
+    .check-circle {
+      border-radius: 50%;
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+      cursor: pointer;
+
+      &.checked {
+        position: relative;
+        &:before {
+          position: absolute;
+          content: '\2713';
+          left: 3px;
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      display: none;
+      &:after {
+        content: "\00d7";
+        cursor: pointer;
+        color: red;
+      }
+    }
+
+    &:hover {
+      .close {
+        display: block;
+      }
+    }
+  }
+
+  #{$r}__summarize {
+    padding: 5px;
+    display: flex;
+    height: 50px;
+    background:rgba($color: #000000, $alpha: 0.05);
+    border: 1px solid rgba($color: #000000, $alpha: 0.09);
+  }
+
+  #{$r}__left {
+    flex: 0 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #{$r}__actions {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      border-radius: 3px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.3);
+      padding: 3px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .selected {
+      font-weight: bold;
+      background-color: grey;
+    }
+  }
+}

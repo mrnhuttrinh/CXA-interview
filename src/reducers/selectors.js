@@ -1,0 +1,1 @@
+export const selectedTodoList = state => state.todoReducer.data;
